@@ -218,7 +218,7 @@ def main():
             subtitulo("Op 16: Procesar reserva confirmada")
             try:
                 r1.procesar()
-                resultado(True, "Reserva procesada exitosamente.")
+                resultado(True, "Reserva procesada exitosamente un gusto.")
             except ReservaError as e:
                 resultado(False, str(e))
 
@@ -278,7 +278,7 @@ def main():
     # ══════════════════════════════════════════════════════════
     # RESUMEN FINAL
     # ══════════════════════════════════════════════════════════
-    titulo("RESUMEN — Estado del Sistema")
+    titulo("RESUMEN — Estado del Sistema Revision")
     print(f"\n  Clientes registrados: {len(gestor._clientes)}")
     print(f"  Servicios en catálogo: {len(gestor._servicios)}")
     print(f"  Reservas en sistema:   {len(gestor._reservas)}")
