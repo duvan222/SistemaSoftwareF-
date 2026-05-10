@@ -97,3 +97,100 @@ Traceback (most recent call last):
 excepciones.ReservaError: [ERR_RESERVA] El cliente 'carlos.r@empresa.com' está inactivo y no puede hacer reservas.
 
 [2026-05-08 19:05:55] [-----] ==================== FIN SIMULACIÓN SOFTWARE FJ ====================
+[2026-05-10 11:34:05] [-----] ==================== INICIO SIMULACIÓN SOFTWARE FJ ====================
+[2026-05-10 11:34:05] [INFO ] Cliente creado: ana.garcia@softwarefj.co — Ana García
+[2026-05-10 11:34:05] [INFO ] Cliente creado: carlos.r@empresa.com — Carlos Rodríguez
+[2026-05-10 11:34:05] [ERROR] Registro fallido de cliente (no-es-un-email): [ERR_CLIENTE] Dato inválido en 'email': Formato inválido: 'no-es-un-email'.
+  Traceback:
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\2\main.py", line 54, in registrar_cliente
+    c = Cliente(nombre, email, telefono)
+  File "c:\Users\Lenovo\Desktop\2\cliente.py", line 52, in __init__
+    self.email     = email
+    ^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\2\cliente.py", line 79, in email
+    raise DatosClienteInvalidosError("email", f"Formato inválido: '{valor}'.")
+excepciones.DatosClienteInvalidosError: [ERR_CLIENTE] Dato inválido en 'email': Formato inválido: 'no-es-un-email'.
+
+[2026-05-10 11:34:05] [ERROR] Registro fallido de cliente (usuario@dominio.com): [ERR_CLIENTE] Dato inválido en 'nombre': Debe tener al menos 2 caracteres.
+  Traceback:
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\2\main.py", line 54, in registrar_cliente
+    c = Cliente(nombre, email, telefono)
+  File "c:\Users\Lenovo\Desktop\2\cliente.py", line 51, in __init__
+    self.nombre    = nombre
+    ^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\2\cliente.py", line 66, in nombre
+    raise DatosClienteInvalidosError("nombre", "Debe tener al menos 2 caracteres.")
+excepciones.DatosClienteInvalidosError: [ERR_CLIENTE] Dato inválido en 'nombre': Debe tener al menos 2 caracteres.
+
+[2026-05-10 11:34:05] [ERROR] Registro fallido de cliente (maria@correo.com): [ERR_CLIENTE] Dato inválido en 'telefono': Formato inválido: 'abc-not-phone'. Use solo dígitos, espacios o guiones.
+  Traceback:
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\2\main.py", line 54, in registrar_cliente
+    c = Cliente(nombre, email, telefono)
+  File "c:\Users\Lenovo\Desktop\2\cliente.py", line 53, in __init__
+    self.telefono  = telefono
+    ^^^^^^^^^^^^^
+  File "c:\Users\Lenovo\Desktop\2\cliente.py", line 90, in telefono
+    raise DatosClienteInvalidosError(
+        "telefono", f"Formato inválido: '{valor}'. Use solo dígitos, espacios o guiones."
+    )
+excepciones.DatosClienteInvalidosError: [ERR_CLIENTE] Dato inválido en 'telefono': Formato inválido: 'abc-not-phone'. Use solo dígitos, espacios o guiones.
+
+[2026-05-10 11:34:05] [ERROR] Registro fallido de cliente (ana.garcia@softwarefj.co): [ERR_CLIENTE] Dato inválido en 'email': 'ana.garcia@softwarefj.co' ya está registrado.
+  Traceback:
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\2\main.py", line 53, in registrar_cliente
+    raise DatosClienteInvalidosError("email", f"'{email}' ya está registrado.")
+excepciones.DatosClienteInvalidosError: [ERR_CLIENTE] Dato inválido en 'email': 'ana.garcia@softwarefj.co' ya está registrado.
+
+[2026-05-10 11:34:05] [ERROR] Servicio con precio negativo rechazado: [ERR_SERVICIO] Parámetro inválido 'precio_base': Debe ser un número positivo, se recibió: -500
+[2026-05-10 11:34:05] [ERROR] Sala con capacidad inválida rechazada: [ERR_SERVICIO] Parámetro inválido 'capacidad': Debe ser uno de [5, 10, 20, 50], se recibió: 999.
+[2026-05-10 11:34:05] [ERROR] Asesoría con nivel inválido rechazada: [ERR_SERVICIO] Parámetro inválido 'nivel_asesor': Debe ser uno de ['junior', 'senior', 'experto']. Recibido: 'dios'.
+[2026-05-10 11:34:05] [INFO ] Reserva 2C245DA9 creada | Cliente: ana.garcia@softwarefj.co | Servicio: SALA-01 | Duración: 3
+[2026-05-10 11:34:05] [INFO ] Reserva 2C245DA9 CONFIRMADA | Costo: $285,600.00 (IVA=True, Desc=0%)
+[2026-05-10 11:34:05] [INFO ] Intento de confirmación para reserva 2C245DA9 finalizado.
+[2026-05-10 11:34:05] [INFO ] Reserva 2C245DA9 PROCESADA exitosamente | Costo final: $285,600.00
+[2026-05-10 11:34:05] [INFO ] Ciclo de procesamiento de reserva 2C245DA9 finalizado.
+[2026-05-10 11:34:05] [INFO ] Reserva BD90F396 creada | Cliente: carlos.r@empresa.com | Servicio: EQP-01 | Duración: 7
+[2026-05-10 11:34:05] [INFO ] Reserva BD90F396 CONFIRMADA | Costo: $640,993.50 (IVA=True, Desc=10%)
+[2026-05-10 11:34:05] [INFO ] Intento de confirmación para reserva BD90F396 finalizado.
+[2026-05-10 11:34:05] [WARN ] Reserva BD90F396 CANCELADA | Motivo: Cliente cambió de equipo
+[2026-05-10 11:34:05] [ERROR] Creación de reserva fallida: [ERR_RESERVA] Duración inválida: 0. Debe ser un número positivo >= 1.
+  Traceback:
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\2\main.py", line 86, in crear_reserva
+    r = Reserva(cliente, servicio, duracion, **kwargs)
+  File "c:\Users\Lenovo\Desktop\2\reserva.py", line 59, in __init__
+    raise DuracionInvalidaError(duracion)
+excepciones.DuracionInvalidaError: [ERR_RESERVA] Duración inválida: 0. Debe ser un número positivo >= 1.
+
+[2026-05-10 11:34:05] [INFO ] Reserva C72DD517 creada | Cliente: ana.garcia@softwarefj.co | Servicio: ASES-01 | Duración: 2.5
+[2026-05-10 11:34:05] [INFO ] Reserva C72DD517 CONFIRMADA | Costo: $450,000.00 (IVA=False, Desc=0%)
+[2026-05-10 11:34:05] [INFO ] Intento de confirmación para reserva C72DD517 finalizado.
+[2026-05-10 11:34:05] [INFO ] Reserva C72DD517 PROCESADA exitosamente | Costo final: $450,000.00
+[2026-05-10 11:34:05] [INFO ] Ciclo de procesamiento de reserva C72DD517 finalizado.
+[2026-05-10 11:34:05] [WARN ] Servicio SALA-01 marcado como no disponible.
+[2026-05-10 11:34:05] [ERROR] Creación de reserva fallida: [ERR_SERVICIO] El servicio 'SALA-01' no está disponible actualmente.
+  Traceback:
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\2\main.py", line 86, in crear_reserva
+    r = Reserva(cliente, servicio, duracion, **kwargs)
+  File "c:\Users\Lenovo\Desktop\2\reserva.py", line 55, in __init__
+    raise ServicioNoDisponibleError(servicio.identificador)
+excepciones.ServicioNoDisponibleError: [ERR_SERVICIO] El servicio 'SALA-01' no está disponible actualmente.
+
+[2026-05-10 11:34:05] [WARN ] Cliente desactivado: carlos.r@empresa.com
+[2026-05-10 11:34:05] [ERROR] Creación de reserva fallida: [ERR_RESERVA] El cliente 'carlos.r@empresa.com' está inactivo y no puede hacer reservas.
+  Traceback:
+Traceback (most recent call last):
+  File "c:\Users\Lenovo\Desktop\2\main.py", line 86, in crear_reserva
+    r = Reserva(cliente, servicio, duracion, **kwargs)
+  File "c:\Users\Lenovo\Desktop\2\reserva.py", line 47, in __init__
+    raise ReservaError(
+        f"El cliente '{cliente.identificador}' está inactivo y no puede hacer reservas."
+    )
+excepciones.ReservaError: [ERR_RESERVA] El cliente 'carlos.r@empresa.com' está inactivo y no puede hacer reservas.
+
+[2026-05-10 11:34:05] [-----] ==================== FIN SIMULACIÓN SOFTWARE FJ ====================

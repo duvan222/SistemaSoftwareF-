@@ -218,7 +218,7 @@ def main():
             subtitulo("Op 16: Procesar reserva confirmada")
             try:
                 r1.procesar()
-                resultado(True, "Reserva procesada exitosamente un gusto.")
+                resultado(True, "Reserva procesada exitosamente un gustogir.")
             except ReservaError as e:
                 resultado(False, str(e))
 
